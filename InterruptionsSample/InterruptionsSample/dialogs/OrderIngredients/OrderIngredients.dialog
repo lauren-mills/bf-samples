@@ -1,0 +1,44 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "bAUPF8",
+    "name": "OrderIngredients",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "NxPuUH",
+        "name": "UnhandledMessage"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TraceActivity",
+          "$designer": {
+            "id": "eYbHLv"
+          }
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "K5tB8L"
+          },
+          "activity": "${SendActivity_K5tB8L()}"
+        },
+        {
+          "$kind": "Microsoft.EmitEvent",
+          "$designer": {
+            "id": "5nBVy6"
+          },
+          "eventName": "unknownIntent"
+        }
+      ]
+    }
+  ],
+  "generator": "OrderIngredients.lg",
+  "recognizer": "OrderIngredients.lu.qna",
+  "id": "OrderIngredients"
+}

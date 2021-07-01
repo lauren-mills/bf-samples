@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_PlaceOrderDialog",
+  "recognizers": {
+    "en-us": "PlaceOrderDialog.en-us.lu",
+    "": "PlaceOrderDialog.en-us.lu"
+  }
+}

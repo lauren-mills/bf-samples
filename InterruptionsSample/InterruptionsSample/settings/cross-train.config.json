@@ -1,0 +1,28 @@
+{
+  "InterruptionsSample.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "CreateReservation": [
+        "CreateReservationDialog.en-us"
+      ],
+      "PlaceOrder": [
+        "PlaceOrderDialog.en-us"
+      ],
+      "Test": [
+        "OrderIngredients.en-us"
+      ]
+    }
+  },
+  "CreateReservationDialog.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "Cancel": ""
+    }
+  },
+  "PlaceOrderDialog.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "Cancel": ""
+    }
+  }
+}

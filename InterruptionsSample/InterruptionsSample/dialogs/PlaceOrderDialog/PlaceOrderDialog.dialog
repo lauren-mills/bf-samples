@@ -1,0 +1,136 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "TPLmnF",
+    "name": "PlaceOrderDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "wBbi8Y"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "Engsnb"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${ChoiceInput_Prompt_Engsnb()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "style": "list",
+          "choices": [
+            "Spaghetti with meatballs",
+            "Margherita pizza",
+            "Caesar salad"
+          ],
+          "property": "dialog.order",
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          }
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "KznY3Q"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": "=#Cancel != null",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "dialog.specialRequests",
+          "prompt": "${TextInput_Prompt_KznY3Q()}"
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "WHtaks"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "prompt": "${ConfirmInput_Prompt_WHtaks()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true
+          },
+          "property": "dialog.confirm"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "3aknnH"
+          },
+          "condition": "=dialog.confirm",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "KqA9Mq"
+              },
+              "activity": "${SendActivity_KqA9Mq()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "NVjF3p"
+              },
+              "activity": "${SendActivity_NVjF3p()}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "8NHIlQ",
+        "name": "Cancel"
+      },
+      "intent": "Cancel",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "w7zpal"
+          },
+          "activity": "${SendActivity_w7zpal()}"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "JFAZ4A"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "PlaceOrderDialog.lg",
+  "recognizer": "PlaceOrderDialog.lu.qna",
+  "id": "PlaceOrderDialog"
+}

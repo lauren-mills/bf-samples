@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_CreateReservationDialog",
+  "recognizers": {
+    "en-us": "CreateReservationDialog.en-us.lu",
+    "": "CreateReservationDialog.en-us.lu"
+  }
+}

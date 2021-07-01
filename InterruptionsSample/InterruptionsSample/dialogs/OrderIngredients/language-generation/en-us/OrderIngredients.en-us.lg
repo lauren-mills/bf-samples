@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_K5tB8L()
+[Activity
+    Text = ${SendActivity_K5tB8L_text()}
+]
+
+# SendActivity_K5tB8L_text()
+- Unknown
+# SendActivity_VTbrPY()
+[Activity
+    Text = ${SendActivity_VTbrPY_text()}
+]
+
+# SendActivity_VTbrPY_text()
+- Test event

@@ -1,0 +1,41 @@
+[import](common.lg)
+
+# NumberInput_Prompt_XOpFdy()
+[Activity
+    Text = How many people?
+]
+
+# DateTimeInput_Prompt_IYUQLm()
+[Activity
+    Text = What date and time?
+]
+
+# ConfirmInput_Prompt_BYpVPW()
+- ```
+Is this correct?
+
+* Guests: ${dialog.numOfPeople}
+* Date: ${formatDateTime(dialog.datetime.value, 'DDDD MM dd, yyyy at h:mmT')}
+```
+# SendActivity_LepPXT()
+[Activity
+    Text = I've made your reservation.
+]
+
+# SendActivity_eJSQTT()
+[Activity
+    Text = I've cancelled your reservation.
+]
+
+# SendActivity_UirNYA()
+[Activity
+    Text = I'll stop making the reservation.
+]
+
+# NumberInput_InvalidPrompt_XOpFdy()
+[Activity
+    Text = ${NumberInput_InvalidPrompt_XOpFdy_text()}
+]
+
+# NumberInput_InvalidPrompt_XOpFdy_text()
+- How many people? I need a number between 1 and 20.

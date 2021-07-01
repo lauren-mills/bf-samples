@@ -1,0 +1,34 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_Engsnb()
+[Activity
+    Text = What would you like to order?
+]
+
+# TextInput_Prompt_KznY3Q()
+[Activity
+    Text = Do you have any special requests?
+]
+
+# ConfirmInput_Prompt_WHtaks()
+- ```
+Does this look right?
+
+Order: ${dialog.order}
+Special requests: ${dialog.specialRequests}
+```
+# SendActivity_KqA9Mq()
+[Activity
+    Text = I've placed your order.
+]
+
+# SendActivity_NVjF3p()
+[Activity
+    Text = I've cancelled your order.
+]
+
+# SendActivity_w7zpal()
+[Activity
+    Text = I'll stop placing your order.
+]
+

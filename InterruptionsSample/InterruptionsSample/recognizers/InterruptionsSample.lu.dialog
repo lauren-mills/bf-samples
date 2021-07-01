@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_InterruptionsSample",
+  "recognizers": {
+    "en-us": "InterruptionsSample.en-us.lu",
+    "": "InterruptionsSample.en-us.lu"
+  }
+}

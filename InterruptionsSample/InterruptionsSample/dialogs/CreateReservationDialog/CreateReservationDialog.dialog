@@ -1,0 +1,120 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "RGz130",
+    "name": "CreateReservationDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "PtjNRu"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "XOpFdy"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "prompt": "${NumberInput_Prompt_XOpFdy()}",
+          "property": "dialog.numOfPeople",
+          "invalidPrompt": "${NumberInput_InvalidPrompt_XOpFdy()}",
+          "allowInterruptions": true
+        },
+        {
+          "$kind": "Microsoft.DateTimeInput",
+          "$designer": {
+            "id": "IYUQLm"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${DateTimeInput_Prompt_IYUQLm()}",
+          "property": "dialog.datetime"
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "BYpVPW"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${ConfirmInput_Prompt_BYpVPW()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "property": "dialog.confirm"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Ja1mb1"
+          },
+          "condition": "=dialog.confirm",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "LepPXT"
+              },
+              "activity": "${SendActivity_LepPXT()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "eJSQTT"
+              },
+              "activity": "${SendActivity_eJSQTT()}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "gvyX6F",
+        "name": "Cancel"
+      },
+      "intent": "Cancel",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "UirNYA"
+          },
+          "activity": "${SendActivity_UirNYA()}"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "h3FJKO"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "CreateReservationDialog.lg",
+  "recognizer": "CreateReservationDialog.lu.qna",
+  "id": "CreateReservationDialog"
+}
